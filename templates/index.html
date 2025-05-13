@@ -1,0 +1,50 @@
+{% extends "conf/base.html" %}
+{% block content %}
+
+<main>
+    <section class="income-section">
+        <h2>Income</h2>
+        {% for income in incomes %}
+        <div class="entry">
+            {{ income.date }} - {{ income.amount }} so'm ({{ income.get_income_type_display }})
+        </div>
+        {% empty %}
+        <p>No income records found.</p>
+        {% endfor %}
+
+        <a href="{% url 'income_add' %}" class="btn-add">➕ Add Income</a>
+    </section>
+
+    <section class="expense-section">
+        <h2>Expense</h2>
+        {% for expense in expenses %}
+        <div class="entry">
+            {{ expense.date }} - {{ expense.amount }} so'm ({{ expense.get_expense_type_display }})
+        </div>
+        {% empty %}
+        <p>No expense records found.</p>
+        {% endfor %}
+
+        <a href="{% url 'expense_add' %}" class="btn-add">➕ Add Expense</a>
+    </section>
+    <section class="balance-section" style="margin-top: 2rem;">
+        <div style="border-left: 4px solid green; border-radius: 10px; padding: 1rem; background-color: #e6ffed;">
+            <h2 style="color: green;">Current Balance</h2>
+            <p style="font-size: 1.2rem;"><strong>{{ balance|floatformat:0 }}</strong> so'm</p>
+        </div>
+    </section>
+
+</main>
+
+<!-- Hisobot Yuklab Olish -->
+<aside class="reports">
+    <h3>📊 Download Reports</h3>
+
+    <a href="{% url 'export-report' 'weekly' %}" class="btn-download" download>📄 Weekly Report</a>
+    <a href="{% url 'export-report' 'monthly' %}" class="btn-download" download>📄 Monthly Report</a>
+    <a href="{% url 'export-report' 'yearly' %}" class="btn-download" download>📄 Yearly Report</a>
+
+</aside>
+
+
+{% endblock %}

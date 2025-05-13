@@ -1,0 +1,21 @@
+{% extends "conf/base.html" %}
+{% block content %}
+
+<main class="form-container">
+    <form class="auth-form" method="POST" action="/login/">
+        {% csrf_token %}
+        <h2>Login to Your Account</h2>
+
+        <label for="username">Username</label>
+        <input type="username" id="username" name="username" placeholder="Enter your username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+        <button type="submit" class="btn-submit">Login</button>
+
+        <p class="link">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+        <a href="">🔒 Login with Google</a>
+    </form>
+</main>
+{% endblock %}

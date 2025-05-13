@@ -1,0 +1,15 @@
+{% extends "conf/base.html" %}
+{% block content %}
+<main class="form-container">
+    <form class="auth-form" method="POST" action="{% url 'verify_code' %}">
+        {% csrf_token %}
+        <h2>Enter OTP Code</h2>
+
+        <label for="otp">6-digit Code</label>
+        <input type="text" id="otp" name="otp" required>
+
+        <button type="submit" class="btn-submit">Verify</button>
+    </form>
+</main>
+
+{% endblock %}

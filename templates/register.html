@@ -1,0 +1,32 @@
+{% extends "conf/base.html" %}
+{% block content %}
+<main class="form-container">
+    <form class="auth-form" method="POST" action="/register/">
+        {% csrf_token %}
+        <h2>Create Account</h2>
+
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" required>
+
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" required>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit" class="btn-submit">Register</button>
+
+        <p class="link">Already have an account? <a href="{% url 'login' %} ">Login</a></p>
+    </form>
+</main>
+{% endblock %}
+

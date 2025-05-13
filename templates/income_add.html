@@ -1,0 +1,11 @@
+{% extends "conf/base.html" %}
+{% block content %}
+<main class="form-container">
+  <form class="auth-form" method="POST">
+    {% csrf_token %}
+    <h2>Add Income</h2>
+    {{ form.as_p }}
+    <button type="submit" class="btn-submit">Save</button>
+  </form>
+</main>
+{% endblock %}

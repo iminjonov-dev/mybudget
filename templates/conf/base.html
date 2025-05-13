@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-left">💰 MyBudget</div>
+
+
+    <div class="nav-right">
+        {% if user.is_authenticated %}
+
+        <div class="user-section">
+            <div>
+                <a href="{% url 'account' %}" class="user-info">
+                    <img src="{% static 'img/user1.png' %}" class="user-icon"/>
+                    {{ user.username }}
+                </a>
+            </div>
+            <div class="nav-right">
+                <a href="{% url 'home' %}" class="btn btn-auth">Home</a>
+            </div>
+            <div>
+                <form method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-logout">Logout</button>
+                </form>
+            </div>
+        </div>
+
+        {% else %}
+        <a href="{% url 'login' %}" class="btn-auth">Login</a>
+        <a href="{% url 'register' %}" class="btn-auth">Register</a>
+        {% endif %}
+
+        <div class="language-switcher">
+            <img src="" class="flag" id="current-flag" alt="Language">
+            <div class="language-options" id="language-dropdown">
+                <a href="/i18n/setlang/?language=uz">Uz<img src="" class="flag" alt="UZ"></a>
+                <a href="/i18n/setlang/?language=ru">Ru<img src="" class="flag" alt="RU"></a>
+                <a href="/i18n/setlang/?language=en">En<img src="" class="flag" alt="EN"></a>
+            </div>
+        </div>
+    </div>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

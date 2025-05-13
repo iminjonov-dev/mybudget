@@ -1,0 +1,281 @@
+/* === Global Settings === */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+main {
+    margin-left: 270px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* === Navbar === */
+.navbar {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.user-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* === Auth Buttons === */
+.btn-auth, .btn-logout {
+    padding: 6px 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+.btn-auth {
+    background-color: #28a745;
+    border: 2px solid white;
+}
+
+.btn-auth:hover {
+    background-color: #218838;
+}
+
+.btn-logout {
+    background-color: #dc3545;
+    border: 2px solid white;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+
+/* === Forms === */
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px;
+}
+
+.auth-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.auth-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* === Entry Sections === */
+.income-section, .expense-section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.income-section {
+    border-left: 5px solid #17a2b8;
+}
+.expense-section {
+    border-left: 5px solid #dc3545;
+}
+
+.entry {
+    background-color: #f9f9f9;
+    border-left: 3px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* === Add Buttons === */
+.btn-add {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-add:hover {
+    background-color: #218838;
+}
+
+/* === Balance Section === */
+.balance-section {
+    width: 100%;
+    max-width: 500px;
+}
+
+.balance-section div {
+    background-color: #e6ffed;
+    border-left: 5px solid green;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.balance-section h2 {
+    color: green;
+    margin: 0 0 10px;
+}
+
+/* === Reports === */
+.reports {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background: #fff;
+    border-right: 5px solid #ddd;
+    box-shadow: 3px 0 6px rgba(0,0,0,0.05);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reports h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.btn-download {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-download:hover {
+    background-color: #0056b3;
+}
+
+/* === Language Switcher === */
+.language-switcher {
+    position: relative;
+}
+
+.language-options {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    top: 30px;
+    right: 0;
+    padding: 5px;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.language-switcher:hover .language-options {
+    display: flex;
+}
+
+.flag {
+    width: 24px;
+    height: 16px;
+    margin-left: 5px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    main {
+        margin-left: 0;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .reports {
+        position: relative;
+        width: 100%;
+        border-right: none;
+        border-top: 4px solid #007bff;
+        margin-top: 20px;
+    }
+}
