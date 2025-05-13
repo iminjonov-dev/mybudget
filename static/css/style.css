@@ -1,281 +1,372 @@
-/* === Global Settings === */
+
+/* ==== Base Layout ==== */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 main {
-    margin-left: 270px;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  margin-left: 270px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
-/* === Navbar === */
+/* ==== Navbar ==== */
 .navbar {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 15px 20px;
 }
 
 .nav-left {
-    font-weight: bold;
-    font-size: 1.4rem;
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
 }
 
-.user-info {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.95rem;
+.nav-right a:hover {
+  text-decoration: underline;
 }
 
-.user-icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    margin-right: 8px;
-}
-
-/* === Auth Buttons === */
-.btn-auth, .btn-logout {
-    padding: 6px 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    color: white;
-}
-
-.btn-auth {
-    background-color: #28a745;
-    border: 2px solid white;
-}
-
-.btn-auth:hover {
-    background-color: #218838;
-}
-
-.btn-logout {
-    background-color: #dc3545;
-    border: 2px solid white;
-}
-
-.btn-logout:hover {
-    background-color: #c82333;
-}
-
-/* === Forms === */
+/* ==== Auth Forms ==== */
 .form-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 40px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 10px;
 }
 
 .auth-form {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    max-width: 400px;
-    width: 100%;
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
 
 .auth-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #007bff;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007bff;
 }
 
 .auth-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .auth-form input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    margin-bottom: 15px;
-    font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 1rem;
 }
 
 .btn-submit {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .btn-submit:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
-/* === Entry Sections === */
-.income-section, .expense-section {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+.link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* ==== Income/Expense Sections ==== */
+.income-section,
+.expense-section {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .income-section {
-    border-left: 5px solid #17a2b8;
+  border-left: 5px solid #17a2b8;
 }
+
 .expense-section {
-    border-left: 5px solid #dc3545;
+  border-left: 5px solid #dc3545;
+}
+
+.income-section h2,
+.expense-section h2 {
+  color: #333;
+  margin-bottom: 15px;
 }
 
 .entry {
-    background-color: #f9f9f9;
-    border-left: 3px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  border-left: 3px solid #ccc;
 }
 
-/* === Add Buttons === */
-.btn-add {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 14px;
-    background-color: #28a745;
-    color: white;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
+/* ==== Reports Aside ==== */
+.reports -{
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: -350px;
+  border-left: 4px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  text-align: center;
+  margin-left: 20px;
+  align-self: flex-start;
+
+}
+.reports -{
+  margin: 20px auto;
+  max-width: 360px;
+  background: #fff;
+  padding: 20px;
+  border-left: 4px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
 }
 
-.btn-add:hover {
-    background-color: #218838;
-}
-
-/* === Balance Section === */
-.balance-section {
-    width: 100%;
-    max-width: 500px;
-}
-
-.balance-section div {
-    background-color: #e6ffed;
-    border-left: 5px solid green;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.balance-section h2 {
-    color: green;
-    margin: 0 0 10px;
-}
-
-/* === Reports === */
 .reports {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 250px;
-    height: calc(100vh - 60px);
-    background: #fff;
-    border-right: 5px solid #ddd;
-    box-shadow: 3px 0 6px rgba(0,0,0,0.05);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  position: fixed;
+  top: 70px; /* navbardan biroz pastda boshlansin */
+  left: 0;
+  width: 260px;
+  height: calc(100vh - 60px); /* butun sahifa balandligi */
+  background-color: #fff;
+  padding: 20px;
+  border-right: 5px solid #ddd;
+  box-shadow: 3px 0 5px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 50;
 }
+
 
 .reports h3 {
-    color: #007bff;
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+  color: #008bff;
 }
 
 .btn-download {
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
+  display: block;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .btn-download:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
-/* === Language Switcher === */
+/* ==== Language Switcher ==== */
 .language-switcher {
-    position: relative;
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+
+
+.flag {
+  width: 24px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .language-options {
-    display: none;
-    position: absolute;
-    background: white;
-    border: 1px solid #ccc;
-    top: 30px;
-    right: 0;
-    padding: 5px;
-    border-radius: 5px;
-    flex-direction: column;
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  z-index: 999;
 }
 
 .language-switcher:hover .language-options {
-    display: flex;
+  display: flex;
+  flex-direction: column;
 }
 
-.flag {
-    width: 24px;
-    height: 16px;
-    margin-left: 5px;
-    border: 1px solid #aaa;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-/* === Responsive === */
+/* ==== Responsive ==== */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    main {
-        margin-left: 0;
-        flex-direction: column;
-        padding: 10px;
-    }
-    .reports {
-        position: relative;
-        width: 100%;
-        border-right: none;
-        border-top: 4px solid #007bff;
-        margin-top: 20px;
-    }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-right {
+    margin-top: 10px;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-container {
+    padding: 20px 10px;
+  }
+
+  .auth-form {
+    padding: 20px;
+  }
+
+  .reports {
+    border-left: none;
+    border-top: 4px solid #007bff;
+  }
 }
+
+.btn-add {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 14px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.btn-add:hover {
+  background-color: #218838;
+}
+
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.user-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* Logout tugmasi */
+.btn-logout {
+  background-color: #dc3545;
+  border: 2px solid white;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-logout:hover {
+  background-color: #c82333;
+}
+
+/* Login / Register tugmalari */
+.btn-auth {
+  background-color: #28a745;
+  color: white;
+  border: 2px solid white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.btn-auth:hover {
+  background-color: #218838;
+}
+
+/* Language flag */
+.language-switcher {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.balance-section {
+    margin-top: 20px;
+}
+.balance-section h2 {
+    color: green;
+}
+.balance-section div {
+    border-left: 5px solid green;
+    background-color: #e6ffed;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
